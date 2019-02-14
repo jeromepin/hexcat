@@ -55,7 +55,7 @@ func Run(path string, options *Options) []HexcatLine {
 func Render(lines []HexcatLine, options *Options) {
 	table := tablewriter.NewWriter(os.Stdout)
 	table.SetAutoWrapText(false)
-	table.SetAlignment(tablewriter.ALIGN_RIGHT)
+	table.SetColumnAlignment([]int{tablewriter.ALIGN_RIGHT, tablewriter.ALIGN_LEFT, tablewriter.ALIGN_LEFT})
 	var line int
 
 	for _, element := range lines {
